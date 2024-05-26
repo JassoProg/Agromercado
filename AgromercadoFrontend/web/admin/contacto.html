@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Contacto - Agromercado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-utilities.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="../style/sweetalert2/sweetalert2.min.css"/>
+        <link rel="stylesheet" href="../style/styleContacto.css">
+    </head>
+    <body>
+        <div class="ContenedorC">
+            <div class="box-info">
+                <h1>CONTACTATE CON NOSOTROS</h1>
+                <div class="data">
+                    <p><i class="fa fa-solid fa-phone"></i> + 52 477 169 48 44</p>
+                    <p><i class="fa fa-solid fa-envelope"></i> agromercadoag@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Blvd. Universidad Tecnológica 225, Universidad Tecnologica, San Carlos la Roncha, 37670 León de los Aldama, Gto.</p>
+                </div>
+                <div class="link">
+                    <a href="#"><i class="fa-brands fa-facebook-f" style="color: #fff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" style="color: #fff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter" style="color: #fff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #fff;"></i></a>
+                </div>
+            </div>
+            <form id="contactForm">
+                <div class="input-box">
+                    <input type="text" id="name" required="" placeholder="Nombre y apellido">
+                </div>
+                <div class="input-box">
+                    <input type="email" id="email" required="" placeholder="Correo electronico">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="subject" required="" placeholder="Asunto">
+                </div>
+                <div class="input-box">
+                    <textarea id="message" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+                </div>
+                <button type="button" onclick="sendEmail()" style="color: #ffffff;">Enviar</button>
+                <button type="submit"><a href="../../index.html" style="text-decoration: none; color: #ffffff;">Regresar</a></button>
+            </form>
+        </div>
+        <script src="../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../style/fontawesome-free-6.4.0-web/js/all.js"></script>
+        <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+                    emailjs.init("HxLZfnp356WItRDbz");
+
+                    function sendEmail() {
+                        const name = document.getElementById("name").value;
+                        const email = document.getElementById("email").value;
+                        const subject = document.getElementById("subject").value;
+                        const message = document.getElementById("message").value;
+
+                        emailjs.send("service_xc4zk1i", "template_8plro8m", {
+                            from_name: name,
+                            reply_to: email,
+                            subject: subject,
+                            message_html: message
+                        }).then(function (response) {
+                            console.log("Correo electrónico enviado con éxito", response);
+                            Swal.fire("Correo electrónico enviado con éxito");
+                            document.getElementById("contactForm").reset();
+                        }, function (error) {
+                            console.log("Error al enviar el correo electrónico", error);
+                            Swal.fire("Error al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.");
+                        });
+                    }
+        </script>
+    </body>
+</html>

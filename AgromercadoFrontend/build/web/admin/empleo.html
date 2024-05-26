@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleo de Programador - Agromercado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #f1f1f1;
+            color: #598234;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .job-details {
+            flex: 1;
+            max-width: 400px;
+            margin-right: 20px;
+        }
+
+        .job-details h2 {
+            color: #598234;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .job-details p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .job-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .application-form {
+            flex: 1;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .application-form h2 {
+            color: #598234;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .application-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .application-form input[type="text"],
+        .application-form input[type="email"],
+        .application-form input[type="file"],
+        .application-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .application-form button {
+            background-color: #598234;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .application-form button:hover {
+            background-color: #456726;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            color: #598234;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .company-logo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+        
+        img{
+            width: 200px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Empleo de Programador - Agromercado</h1>
+    </header>
+    <main>
+        <div class="job-details">
+            <h2>Detalles del Empleo</h2>
+            <p>Estamos buscando un programador con experiencia en agronomía para unirse a nuestro equipo. Si tienes pasión por la agricultura y habilidades técnicas, ¡te estamos buscando!</p>
+            <ul>
+                <li>Experiencia en desarrollo de software relacionado con la agronomía.</li>
+                <li>Conocimiento de herramientas como GIS y sistemas de información agrícola.</li>
+                <li>Capacidad para trabajar en equipo y comunicarse eficazmente con agrónomos y otros profesionales.</li>
+            </ul>
+            <!-- Espacio para el logo de la empresa -->
+            <img class="company-logo" src="../media/img/logoAgreomercado.png">
+
+        </div>
+        <div class="application-form">
+            <h2>Aplica Ahora</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="resume">Currículum Vitae:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                
+                <button type="submit">Enviar</button>
+                <button type="submit"><a href="../index.html" style="text-decoration: none; color: #fff;">Regresar</a></button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lunar Software - Agromercado. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

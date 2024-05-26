@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-utilities.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" href="../style/sweetalert2/sweetalert2.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <title>Servicios - Agromercado</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "poppins";
+            }
+            
+            :root{
+                --primery-color: #ffffff;
+                --secundary-color: #598234;
+            }
+            
+            #service-section{
+                min-height: 740px;
+                width: 100%;
+                background: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            #service-section h2{
+                font-size: 2rem;
+                margin-bottom: 20px;
+                position: relative;
+            }
+            #service-section h2::after{
+                position: absolute;
+                content: "";
+                top: 8px;
+                left: -30px;
+                height: 0;
+                width: 0;
+                border-top: 20px solid #598234;
+                border-left: 20px solid var(--primery-color);
+            }
+            #service-section h2::before{
+                position: absolute;
+                content: "";
+                top: 8px;
+                right: -30px;
+                height: 0;
+                width: 0;
+                border-top: 20px solid #598234;
+                border-right: 20px solid var(--primery-color);
+            }
+            #service-section #parrafo{
+                width: 40%;
+                font-size: 1rem;
+                color: rgba(0, 0, 0, 0.7);
+                text-align: center;
+                line-height: 1.5rem;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+            }
+            .cards{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 25px;
+                z-index: 9;
+                margin-top: 20px;
+            }
+            .cards .card{
+                min-height: 350px;
+                width: 450px;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                padding: 0 8%;
+                background: #E5F1E5;
+                position: relative;
+                border-radius: 10px;
+            }
+            .cards .card::before{
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                background: rgb(198, 240, 197);
+                transform: rotate(0deg);
+                z-index: -1;
+            }
+            
+            .cards .card:hover.card::before{
+                transform: rotate(10deg);
+            }
+            .cards .card h3{
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+            .cards .card .content p{
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 1.05rem;
+                font-weight: 500;
+            }
+            
+            @media(max-width:1100px){
+                #service-section h2{
+                    margin-top: 30px;
+                }
+                .cards{
+                    grid-template-columns: repeat(1,1fr);
+                }
+                #service-section #parrafo{
+                    width: 50%;
+                }
+            }
+            @media(max-width:900px){
+                .cards .card{
+                    height: 300px;
+                    width: 400px;
+                    margin: 20px 0;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="service-section">
+                <h2>Servicios: </h2>
+                <p id="parrafo">AgroMercado es su destino digital integral para todas las necesidades relacionadas con semillas y agronomía. Desde nuestra plataforma de comercio electrónico, conectamos a agricultores y 
+                    empresas agrícolas con una amplia gama de semillas de alta calidad, facilitando transacciones seguras y eficientes. 
+                </p>
+                <div class="cards">
+                    <div class="card">
+                        <i class="fa-brands fa-react" style="font-size:1.8rem;"></i>
+                        <div class="content">
+                            <h3>Plataforma de comercio electrónico de semillas:</h3>
+                            <p>AgroMercado podría proporcionar una plataforma de comercio electrónico donde los agricultores y empresas agrícolas puedan comprar y vender una amplia variedad de semillas.
+                            </p>
+                            <p>Esto incluiría semillas de 
+                                cultivos comunes como maíz, trigo, arroz, soja, así como semillas de hortalizas y frutas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <i class="fa-regular fa-gem" style="font-size:1.8rem;"></i>
+                        <div class="content">
+                            <h3>Asesoría agronómica: </h3>
+                            <p>AgroMercado podría ofrecer servicios de asesoría agronómica proporcionados por expertos en agricultura.
+                            </p>
+                            <p>Estos servicios podrían incluir consultas personalizadas sobre prácticas agrícolas, recomendaciones de cultivos, gestión de suelos, control de plagas y enfermedades, así como asistencia en la selección de semillas adecuadas para las condiciones específicas de cultivo de cada cliente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-rocket"  style="font-size:1.8rem;"></i>
+                        <div class="content">
+                            <h3>Recursos educativos y noticias agrícolas: </h3>
+                            <p>AgroMercado podría ofrecer una sección de recursos educativos y noticias agrícolas en su sitio web.
+                            </p>
+                            <p>Esto podría incluir artículos, guías, videos y otros materiales educativos sobre prácticas agrícolas modernas, tendencias en el mercado de semillas, técnicas de cultivo sostenible, innovaciones en la industria agrícola y más.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <br>
+                <button type="submit"><a href="../index.html" style="text-decoration: none; color: #598234;">Regresar</a></button>
+            </div>
+        </div>
+        <script src="../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../style/fontawesome-free-6.4.0-web/js/all.js"></script>
+        <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
+    </body>
+</html>

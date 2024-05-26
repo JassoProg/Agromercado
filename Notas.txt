@@ -1,0 +1,11 @@
+Usuario y contraseña para entrar a Agromercado sin funciones de API
+
+Usuario: Administrador
+Contraseña: AbcdEfgH
+
+Usuario y contraseña para entrar a Agromercado con funciones de API
+
+Usuario: Administrador
+Contraseña: Administrador
+
+

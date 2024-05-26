@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agromercado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../style/style2.css" rel="stylesheet" type="text/css"/>
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <link rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#" class="logo">
+                            <img src="../../media/img/logoAgromercado2.png" alt=""/>
+                            <span class="nav-item">Agromer</span>
+                        </a></li>
+                    <li><a href="../principal.html">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-item">Inicio</span>
+                        </a></li>
+                    <li><a href="../productos/productos.html">
+                            <i class="fas fa-box"></i>
+                            <span class="nav-item">Productos</span>
+                        </a></li>
+                    <li><a href="../compras/compras.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="nav-item">Compras</span>
+                        </a></li>
+                    <li><a  href="../ventas/ventas.html">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span class="nav-item">Ventas</span>
+                        </a></li>
+                    <li><a href="../perfil/perfil.html">
+                            <i class="fas fa-user"></i>
+                            <span class="nav-item">Perfil</span>
+                        </a></li>
+                    <li><a onclick="eliminarToken();" class="logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item">Salir</span>
+                        </a></li>
+                </ul>
+            </nav>
+
+            <section class="main">
+                <div class="main-top">
+                    <h1>Ventas</h1>
+                </div>
+                <div class="ventas">
+                    <div class="card">
+                        <h2>Registro de Producto</h2>
+                        <form>
+                            <div class="form">
+                                <div class="column">
+                                    <div class="input-field">
+                                        <label>Nombre del Producto</label>
+                                        <input id="txtNombreProducto" type="text" placeholder="Ingrese el nombre" name="nombreProducto">
+                                    </div>
+                                    <div class="input-field">
+                                        <label>Descripción</label>
+                                        <input id="txtDescripcion" type="text" placeholder="Descripción del producto" name="descripcion">
+                                    </div>
+                                    <div class="input-field">
+                                        <label>Cantidad Disponible (kg)</label>
+                                        <input id="txtCantidad" type="number" placeholder="Cantidad" name="stock">
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-field">
+                                        <label>Precio de Compra (kg)</label>
+                                        <input id="txtPrecioCompra" type="text" placeholder="Ingrese el precio de compra" name="precioCompra">
+                                    </div>
+                                    <div class="input-field">
+                                        <label>Estatus</label>
+                                        <select id="cmbEstatus" name="estatus">
+                                            <option value="0"></option>
+                                            <option value="1">Disponible</option>
+                                            <option value="0">No Disponible</option>
+                                        </select>
+                                    </div>
+                                    <!--<div class="input-field">
+                                        <label>Ruta de la Foto</label>
+                                        <input id="txtRuta" type="text" placeholder="Ruta de la foto" name="rutaFoto">
+                                    </div>-->
+                                </div>
+                                <div class="column">
+                                    <div class="input-field">
+                                        <label for="foto">Imagen del Producto</label>
+                                        <div class="image-upload-container">
+                                            <img id="imgFoto" class="preview-image" src=""/>
+                                            <label id="btnSeleccionarFoto" for="foto" class="image-upload-label" onclick="mostrarDialogoFotografia();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Seleccionar Imagen</label>
+                                            <div style="display: none">
+                                                <input id="inputFileFotoProducto" type="file" />
+                                                <br>
+                                                <textarea id="txtaCodigoImagen"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button onclick="saveProducto(event);" type="submit">Registrar Producto</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contenedor">
+
+                        <!-- Tarjeta -->
+                        <section class="tarjeta" id="tarjeta">
+                            <div class="delantera">
+                                <div class="logo-marca" id="logo-marca">
+                                    <!-- <img src="../../media/img/logos/visa.png" alt=""> -->
+                                </div>
+                                <img src="../../media/img/chip-tarjeta.png" class="chip" alt="">
+                                <div class="datos">
+                                    <div class="grupo" id="numero">
+                                        <p class="label">Número Tarjeta</p>
+                                        <p class="numero">#### #### #### ####</p>
+                                    </div>
+                                    <div class="flexbox">
+                                        <div class="grupo" id="nombre">
+                                            <p class="label">Nombre Tarjeta</p>
+                                            <p class="nombre">Antonio Cruz</p>
+                                        </div>
+
+                                        <div class="grupo" id="expiracion">
+                                            <p class="label">Expiracion</p>
+                                            <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="trasera">
+                                <div class="barra-magnetica"></div>
+                                <div class="datos">
+                                    <div class="grupo" id="firma">
+                                        <p class="label">Firma</p>
+                                        <div class="firma"><p></p></div>
+                                    </div>
+                                    <div class="grupo" id="ccv">
+                                        <p class="label">CCV</p>
+                                        <p class="ccv"></p>
+                                    </div>
+                                </div>
+                                <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                                <a href="#" class="link-banco">www.tubanco.com</a>
+                            </div>
+                        </section>
+
+                        <!-- Contenedor Boton Abrir Formulario -->
+                        <div class="contenedor-btn">
+                            <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Formulario -->
+                        <div>
+                            <form id="formulario-tarjeta" class="formulario-tarjeta">
+                                <div class="grupo">
+                                    <label for="inputNumero">Número Tarjeta</label>
+                                    <input type="text" id="txtNumeroTarjeta" maxlength="19" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputNombre">Nombre</label>
+                                    <input type="text" id="txtNombreTarjeta" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="text" id="txtEmail" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputDomicilio">Domicilio</label>
+                                    <input type="text" id="txtDomicilio" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputCodigoPostal">Código Postal</label>
+                                    <input type="text" id="txtCodigoPostal" maxlength="5" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputEstado">Ciudad</label>
+                                    <input type="text" id="txtCiudad" maxlength="100" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputPais">País</label>
+                                    <input type="text" id="txtPais" maxlength="100" autocomplete="off">
+                                </div>
+                                <div class="flexbox">
+                                    <div class="grupo expira">
+                                        <label for="selectMes">Expiracion</label>
+                                        <div class="flexbox">
+                                            <div class="grupo-select">
+                                                <select name="mes" id="selectMes">
+                                                    <option disabled selected>Mes</option>
+                                                </select>
+                                                <i class="fas fa-angle-down"></i>
+                                            </div>
+                                            <div class="grupo-select">
+                                                <select name="year" id="selectYear">
+                                                    <option disabled selected>Año</option>
+                                                </select>
+                                                <i class="fas fa-angle-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grupo ccv">
+                                        <label for="inputCCV">CVV</label>
+                                        <input  type="text" id="txtCVV" maxlength="3">
+                                    </div>
+                                </div>
+                                <button onclick="saveTarjeta(event);" type="submit" class="btn-enviar">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <section class="footer">
+                        <div class="footer-list">
+                            <div class="footer-content">
+                                <img src="../../media/img/logoAgromercado2.png" alt="" style="max-width: 200px; height: auto;"/>
+                                <p style="font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">AGROMERCADO</p>
+                            </div>
+                            <div class="footer-content">
+                                <h2>Contacto</h2>
+                                <ul>
+                                    <li><i class="fas fa-map-marker-alt"></i> <a href="#">León, Guanajuato</a></li>
+                                    <li><i class="far fa-envelope"></i> <a href="#">stella@gmail.com</a></li>
+                                    <li><i class="fas fa-phone-alt"></i> <a href="#">+477-160-4844</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-content">
+                                <h2>Enlaces rápidos</h2>
+                                <ul>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="../productos/productos.html">Productos</a></li>
+                                    <li><a href="../compras/compras.html">Compras</a></li>
+                                    <li><a href="../ventas/ventas.html">Ventas</a></li>
+                                    <li><a href="../perfil/perfil.html">Perfil</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-content">
+                                <h2>Redes Sociales</h2>
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/share/aCxgJAgi47PUpnu5/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="https://x.com/agromercadoag?s=21"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="http://linkedin.com/in/agromercado-ag-804918302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/agromercadoag?igsh=MXZ3amMzNW55aWJ3Ng%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <script src="../js/ventas.js" type="text/javascript"></script>
+        <script src="style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+                                    function eliminarToken() {
+                                        localStorage.removeItem('token');
+                                        localStorage.removeItem('comprasRealizadas');
+                                        window.location.replace("../../index.html");
+                                    }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var token = localStorage.getItem('token');
+
+                if (!token) {
+                    window.location.replace('../../index.html');
+                }
+            });
+        </script>
+    </body>
+</html>

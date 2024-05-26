@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-utilities.min.css"/>
+        <link rel="stylesheet" href="../style/bootstrap/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="../style/sweetalert2/sweetalert2.min.css"/>
+        <title>Procesos - Agromercado</title>
+        <style>
+            body{
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                font-family: "monserrat", sans-serif;
+            }
+            .services{
+                width: 100vw;
+                height: 100vh;
+                background: #f1f1f1;
+                text-align: center;
+            }
+            .services h1{
+                display: inline-block;
+                text-transform: uppercase;
+                border-bottom: 4px solid #598234;
+                font-size: 20px;
+                padding-bottom: 10px;
+                margin-top: 40px;
+            }
+            .cen{
+                max-width: 1200px;
+                margin: auto;
+                overflow: hidden;
+                padding: 20px;
+            }
+            .service{
+                display: inline-block;
+                width: calc(100% / 3);
+                margin: 0 -2px;
+                padding: 20px;
+                box-sizing: border-box;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+            .service:hover{
+                background: #ddd;
+            }
+            .service h2{
+                font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin: 0;
+            }
+            .service p{
+                color: gray;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            @media screen and (max-width:800px){
+                .service{
+                    width: 50%;
+                }
+            }
+            @media screen and (max-width:500px){
+                .service{
+                    width: 100%;
+                }
+            }
+            button{
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="services">
+            <h1>Tus procesos</h1>
+            <div class="cen">
+                <div class="service">
+                    <i class="fa-solid fa-cart-shopping" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Compra y venta</h2>
+                    <p>Realiza compras y ventas de todas tus semillas favoritas para realizar tu plantio personal.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-seedling" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Semillas</h2>
+                    <p>Agromercado puede ofrecer una amplia variedad de semillas para diferentes tipos de cultivos.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-star" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Calidad</h2>
+                    <p>Al comprar semillas a través de Agromercado, es posible obtener semillas de alta calidad de proveedores confiables. </p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-circle-info" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Informacion</h2>
+                    <p>Proporcionar información detallada sobre cada tipo de semilla, incluyendo instrucciones de siembra, requisitos de cuidado y posibles problemas que puedan surgir.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-cloud" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Clima</h2>
+                    <p>Consultar el clima a través de Agromercado puede ayudar a los agricultores a planificar sus actividades de siembra y cosecha de manera más efectiva.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-check" style="color: #598234; font-size: 34px; margin-bottom: 30px;"></i>
+                    <h2>Previsiones</h2>
+                    <p>Al conocer las previsiones meteorológicas, los agricultores pueden tomar decisiones informadas sobre cuándo sembrar, regar, fertilizar o cosechar sus cultivos.</p>
+                </div>
+                <hr>
+                <br>
+                <button type="submit"><a href="../index.html" style="text-decoration: none; color: #598234;">Regresar</a></button>
+            </div>
+
+        </div>
+        <script src="../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../style/fontawesome-free-6.4.0-web/js/all.js"></script>
+        <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
+    </body>
+</html>

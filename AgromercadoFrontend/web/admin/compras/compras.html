@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agromercado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../style/style2.css" rel="stylesheet" type="text/css"/>
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <!-- Incluir SweetAlert desde CDN en tu archivo HTML -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#" class="logo">
+                            <img src="../../media/img/logoAgromercado2.png" alt=""/>
+                            <span class="nav-item">Agromer</span>
+                        </a></li>
+                    <li><a href="../principal.html">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-item">Inicio</span>
+                        </a></li>
+                    <li><a href="../productos/productos.html">
+                            <i class="fas fa-box"></i>
+                            <span class="nav-item">Productos</span>
+                        </a></li>
+                    <li><a href="../compras/compras.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="nav-item">Compras</span>
+                        </a></li>
+                    <li><a href="../ventas/ventas.html">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span class="nav-item">Ventas</span>
+                        </a></li>
+                    <li><a href="../perfil/perfil.html">
+                            <i class="fas fa-user"></i>
+                            <span class="nav-item">Perfil</span>
+                        </a></li>
+                    <li><a onclick="eliminarToken();" class="logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item">Salir</span>
+                        </a></li>
+                </ul>
+            </nav>
+
+            <section class="main">
+                <div class="main-top">
+                    <h1>Compras</h1>
+                </div>
+                <section class="compras">
+                    <div id="contenedorCompras">
+                        <!-- Los productos del carrito se cargarán aquí -->
+                    </div>
+
+                </section>
+                <!-- Contenedor del carrito -->
+                <div class="card card-fixed">
+                    <h3>Carrito de compras</h3>
+                    <div class="carrito-content">
+                        <!-- Productos al carrito -->
+                    </div>
+                    <div class="total-container">
+                        <h3>Total:</h3>
+                        <div class="total">$0.00</div>
+                        <button class="vaciar-carrito-btn"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                    <form id="payment-form">
+                        <label for="cmbTarjeta">Seleccione una tarjeta:</label>
+                        <select class="form-select" id="cmbTarjeta" name="tarjeta">
+                            
+                        </select>
+                        <button class="pagar-btn" onclick="enviarCompraACarrito(event);">Pagar</button>
+                    </form>
+                </div>
+                <section class="compraFooter">
+                    <div class="footer-list">
+                        <div class="footer-content">
+                            <img src="../../media/img/logoAgromercado2.png" alt="" style="max-width: 200px; height: auto;"/>
+                            <p style="font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">AGROMERCADO</p>
+                        </div>
+                        <div class="footer-content">
+                            <h2>Contacto</h2>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> <a href="#">León, Guanajuato</a></li>
+                                <li><i class="far fa-envelope"></i> <a href="#">stella@gmail.com</a></li>
+                                <li><i class="fas fa-phone-alt"></i> <a href="#">+477-160-4844</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-content">
+                            <h2>Enlaces rápidos</h2>
+                            <ul>
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="../productos/productos.html">Productos</a></li>
+                                <li><a href="../compras/compras.html">Compras</a></li>
+                                <li><a href="../ventas/ventas.html">Ventas</a></li>
+                                <li><a href="../perfil/perfil.html">Perfil</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-content">
+                            <h2>Redes Sociales</h2>
+                            <ul class="social-icons">
+                                <li><a href="https://www.facebook.com/share/aCxgJAgi47PUpnu5/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="https://x.com/agromercadoag?s=21"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="http://linkedin.com/in/agromercado-ag-804918302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="https://www.instagram.com/agromercadoag?igsh=MXZ3amMzNW55aWJ3Ng%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <script src="../js/compras.js" type="text/javascript"></script>
+        <script>
+                        function eliminarToken() {
+                            localStorage.removeItem('token');
+                            localStorage.removeItem('comprasRealizadas');
+                            window.location.replace("../../index.html");
+                        }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var token = localStorage.getItem('token');
+
+                if (!token) {
+                    window.location.replace('../../index.html');
+                }
+            });
+        </script>
+    </body>
+</html>

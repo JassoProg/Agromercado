@@ -1,0 +1,43 @@
+Historial de Versiones
+
+Version v0.1 (Por Jasso)
+
+Cambios realizados:
+
+Se agrego una carpeta llamada BD para los ScriptsMySQL de la base de datos.
+
+Se agrego una carpeta llamada Lib para las librerias de Java.
+
+Se agrego una carpeta llamada Logs donde se manejan las versiones 
+
+Se creo Aplicacion Web de Agromercado_backend
+-Se creo clase java: RESTLogin, RESTUsuario.
+
+Se creo Aplicacion Java de Agromercado_core
+-Se creo clase java: ConexionMySQL, ControladorLogin, ControladorUsuario.
+
+Se creo Aplicacion Java de Agromercado_model
+-Se creo clase java: Persona, Tarjeta, Usuario.
+
+
+Version v0.2 (Por Jasso)
+
+Cambios realizados: 
+
+Se borro Aplicacion Web de Agromercado (Creado por Antonio)
+
+Se creo Aplicacion Web de Agromercado_frontend
+-En la carpeta web se hicieron las siguientes modificaciones
+En carpeta admin: Se agrego la carpeta Ayuda, Catalogo, compras, Contacto, Empleo, login, Principal, Procesos, productos, Servicios, ventas. (Cada una con su respectivo HTML).
+En la carpeta js : Se agrego navBar.js
+En la carpeta media: Se agregaron archivos a la carpeta img
+En la carpeta style: Se agrego style3.css, styleCatalogo.css, styleContacto.css, stylePrincipal.css.
+
+-Se agrego la funcionalidad de Login (Con API)
+
+
+
+
+
+
+
