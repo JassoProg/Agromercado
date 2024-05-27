@@ -92,7 +92,7 @@ var myChart = new Chart(
 
 function buscarClima() {
     const ciudad = document.getElementById('cityInput').value.trim();
-    const apiKey = '1ff13b18a4a4182a8466dcc84593ef91';
+    const apiKey = '1';
 
     if (ciudad === '') {
         Swal.fire('Por favor ingrese el nombre de la ciudad.');
